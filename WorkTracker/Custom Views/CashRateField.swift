@@ -5,7 +5,7 @@
 
 import UIKit
 
-class CashRateField: CUITextField {
+class CashRateField: CUITextField, ViewSetup {
 
     var cents: Int = 0
     private var lastNumber: Int { get { Int(String((text ?? "").last!)) ?? 0 } }

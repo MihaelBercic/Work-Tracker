@@ -5,7 +5,7 @@
 
 import UIKit
 
-class EntryTableCell: CUITableViewCell, ViewSetup{
+class EntryTableCell: CUITableCell, ViewSetup{
 
     // Entry has: Start, End, Client
 

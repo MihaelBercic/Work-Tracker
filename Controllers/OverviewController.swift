@@ -17,6 +17,7 @@ class OverviewController: CUIViewController, ViewSetup {
     private let clockInButton        = ActionButton()
 
     private let todayDashboard    = DashboardPanel()
+    private let earningsTableView = EarningsTableView()
     private let clockInController = ClockInController()
 
     // Observable properties
@@ -30,9 +31,18 @@ class OverviewController: CUIViewController, ViewSetup {
 
 }
 
+// Custom
+extension OverviewController {
+    @objc func onMoreTap() {
+        earningsTableView.refresh()
+    }
+}
+
 // Setup
 extension OverviewController {
     func onInit() {
+        clientProperty.bindBiDirectionally(with: clockInController.clientProperty)
+        timeElapsedProperty.bindBiDirectionally(with: clockInController.timeProperty)
         todayDashboard.timeProperty.bind(to: timeElapsedProperty)
         clockInButton.onTap {
             if loadStoredClients.count == 0 {
@@ -44,7 +54,7 @@ extension OverviewController {
             let isFinished = currentEntry != nil
 
             // Ternary
-            isFinished ? controller.onClockOut() : controller.updateData(); self.present(controller, animated: true)
+            isFinished ? controller.onClockOut() : { controller.updateData(); self.present(controller, animated: true) }()
         }
 
         clientProperty.setOnChange { client in
@@ -74,11 +84,11 @@ extension OverviewController {
         view.addSubview(verticalStackView)
         verticalStackView.addArrangedSubview(todayDashboard)
         verticalStackView.addArrangedSubview(currentTimeLabel)
-        view.addSubview(clientAndRateLabel)
         view.addSubview(currentEarningsLabel)
+        view.addSubview(clientAndRateLabel)
         view.addSubview(clockInButton)
+        view.addSubview(earningsTableView)
     }
-
 }
 
 // Constraints
@@ -114,6 +124,12 @@ extension OverviewController {
             $0.centerXAnchor = view.centerXAnchor
             $0.bottomAnchor = view.safeAreaLayoutGuide.bottomAnchor
             $0.bottomConstant = -70
+        }
+        earningsTableView.connect {
+            $0.topAnchor = todayDashboard.bottomAnchor
+            $0.widthAnchor = todayDashboard.widthAnchor
+            $0.centerXAnchor = todayDashboard.centerXAnchor
+            $0.topConstant = -10
         }
     }
 }
@@ -157,9 +173,9 @@ extension OverviewController {
             $0.layer.borderColor = UIColor.systemGray6.cgColor
         }
 
-        clientProperty.bindBiDirectionally(with: clockInController.clientProperty)
-        timeElapsedProperty.bindBiDirectionally(with: clockInController.timeProperty)
         clockInController.checkForLast()
+
+        todayDashboard.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onMoreTap)))
 
     }
 }

@@ -24,7 +24,7 @@ class ClockInController: CUIViewController, ViewSetup {
     let alert                 = UIAlertController(title: "Oi!", message: "Please select your client", preferredStyle: .actionSheet)
     let clientsCollectionView = ClientSelectionCollectionView(collectionViewLayout: UICollectionViewFlowLayout())
 
-    func setup() {
+    func onInit() {
         view.backgroundColor = .systemBackground
 
         // TESTING

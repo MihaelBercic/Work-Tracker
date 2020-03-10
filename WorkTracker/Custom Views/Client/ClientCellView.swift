@@ -5,7 +5,7 @@
 
 import UIKit
 
-class ClientCellView: CUITableViewCell, UITableViewDelegate, ViewSetup {
+class ClientCellView: CUITableCell, UITableViewDelegate, ViewSetup {
 
     private let stackView       = UIStackView()
     private let iconView        = ClientCircularView()

@@ -33,9 +33,11 @@
 		BFF89904511598F625E6B13D /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF897CFF3362798F34A7540 /* DatePicker.swift */; };
 		BFF89960BBF49896AF2BD73D /* SwipeApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF89A95AE593720534196A3 /* SwipeApplicationController.swift */; };
 		BFF899CB399AE2D42EADF7EA /* ClockInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF89C475E42FEE0FE2C4DFF /* ClockInController.swift */; };
+		BFF89A9BA11C531FB8E37C8C /* EarningsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF890DCA06CB56D0D2ED9E0 /* EarningsTableView.swift */; };
 		BFF89AC5CCD650FC124FE843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFF89FD3F96792F4243E4399 /* Assets.xcassets */; };
 		BFF89BD03417F143B2E0C0C8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF897164DEFC1A44FE1516C /* Helper.swift */; };
 		BFF89BFF16793D6D9125D3AC /* ClientCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8955E696CBB1D1295497E /* ClientCellView.swift */; };
+		BFF89C14D8A060F170A47779 /* EarningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF89089603E82A1D97F7907 /* EarningCell.swift */; };
 		BFF89C3B19F881B676BA3D5B /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF89FFEC0B20DD71E70F297 /* SettingsController.swift */; };
 		BFF89C43301674B016E71B2B /* MonthGroupCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF899CA5BABA5397AC51DAA /* MonthGroupCollectionView.swift */; };
 		BFF89CF65042A207C4899321 /* ClientEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF89B4A9BF6470D49631891 /* ClientEditController.swift */; };
@@ -58,6 +60,8 @@
 		47C879222406D16A00314EB9 /* Client+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BFF8903260F79A2308D59981 /* ClientsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientsTableView.swift; sourceTree = "<group>"; };
 		BFF8904D766F5B1E9E5CB9B4 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		BFF89089603E82A1D97F7907 /* EarningCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarningCell.swift; sourceTree = "<group>"; };
+		BFF890DCA06CB56D0D2ED9E0 /* EarningsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarningsTableView.swift; sourceTree = "<group>"; };
 		BFF892B8FE0AF842D5699D88 /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		BFF892DB2EE39F02E39C1140 /* CashRateField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashRateField.swift; sourceTree = "<group>"; };
 		BFF893469C2091D2892B976A /* MonthGroupCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthGroupCollectionCell.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				BFF89BB223AB08DDF98C480B /* DashboardPanel.swift */,
+				BFF890DCA06CB56D0D2ED9E0 /* EarningsTableView.swift */,
+				BFF89089603E82A1D97F7907 /* EarningCell.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
@@ -371,6 +377,8 @@
 				BFF89FF354BB109F33FBDAA8 /* Binding.swift in Sources */,
 				BFF89E365B54B6962DD67CBC /* Test.swift in Sources */,
 				BFF89904511598F625E6B13D /* DatePicker.swift in Sources */,
+				BFF89A9BA11C531FB8E37C8C /* EarningsTableView.swift in Sources */,
+				BFF89C14D8A060F170A47779 /* EarningCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

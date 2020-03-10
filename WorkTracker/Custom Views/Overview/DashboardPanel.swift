@@ -9,7 +9,7 @@ import UIKit
 class DashboardPanel: CUIView, ViewSetup {
 
     // Observable
-    let timeProperty = Observable<TimeInterval>(0) { x in print("HEHE THIS WAS CHANGED") }
+    let timeProperty = Observable<TimeInterval>(0) { _ in }
 
     // Views
     private let todayLabel                    = UILabel()

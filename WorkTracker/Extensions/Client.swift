@@ -5,6 +5,18 @@
 
 import Foundation
 
+extension Entry {
+
+    var earningsInCents: Int {
+        if let stop = stop {
+            let interval      = start.distance(to: stop)
+            let ratePerSecond = client.rate.doubleValue / 3600
+            return Int(interval * ratePerSecond)
+        }
+        return 0
+    }
+
+}
 
 extension Client {
 

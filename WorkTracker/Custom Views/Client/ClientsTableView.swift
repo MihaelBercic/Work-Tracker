@@ -5,7 +5,7 @@
 
 import UIKit
 
-class ClientsTableView: CUITableView {
+class ClientsTableView: CUITableView, ViewSetup {
 
     var onClientSelection: (Client) -> () = { _ in }
 

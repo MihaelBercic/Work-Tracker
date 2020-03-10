@@ -85,7 +85,7 @@ class CUITextField: UITextField {
 
 
 // Reusable cells
-class CUITableViewCell: UITableViewCell {
+class CUITableCell: UITableViewCell {
 
     override init(style: CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

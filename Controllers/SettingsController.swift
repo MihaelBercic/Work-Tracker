@@ -38,6 +38,7 @@ extension SettingsController {
         editClientController.onDismiss = { self.setupData() }
         clientsTableView.onClientSelection = { client in
             let isSettings = self.segmentedControl.selectedSegmentIndex == 0
+            self.selectedClientProperty.value = nil
             self.selectedClientProperty.value = client
             self.present(isSettings ? self.editClientController : self.entriesController, animated: true)
         }
