@@ -13,22 +13,19 @@ class ClockInController: CUIViewController, ViewSetup {
     var timer: Timer?
 
     // Observable properties
-    let clientProperty        = Observable<Client?>(nil)
-    let timeProperty          = Observable<TimeInterval>(0)
+    let clientProperty = Observable<Client?>(nil)
+    let timeProperty = Observable<TimeInterval>(0)
 
     // Constants
-    let mainStackView         = UIStackView()
-    let selectTitleLabel      = UILabel()
-    let datePicker            = DatePicker()
-    let startButton           = ActionButton()
-    let alert                 = UIAlertController(title: "Oi!", message: "Please select your client", preferredStyle: .actionSheet)
+    let mainStackView = UIStackView()
+    let selectTitleLabel = UILabel()
+    let datePicker = DatePicker()
+    let startButton = ActionButton()
+    let alert = UIAlertController(title: "Oi!", message: "Please select your client", preferredStyle: .actionSheet)
     let clientsCollectionView = ClientSelectionCollectionView(collectionViewLayout: UICollectionViewFlowLayout())
 
     func onInit() {
         view.backgroundColor = .systemBackground
-
-        // TESTING
-        updateData()
     }
 
 }
@@ -37,7 +34,7 @@ class ClockInController: CUIViewController, ViewSetup {
 extension ClockInController {
 
     func checkForLast() {
-        let lastEntry    = loadStoredEntries.last
+        let lastEntry = loadStoredEntries.last
         let isUnfinished = lastEntry != nil && lastEntry!.stop == nil
         if isUnfinished {
             currentEntry = lastEntry

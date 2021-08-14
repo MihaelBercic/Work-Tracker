@@ -14,7 +14,8 @@ class EntriesTableView: CUITableView, ViewSetup {
         register(EntryTableCell.self, forCellReuseIdentifier: "EntryTableCell")
         delegate = self
         dataSource = self
-        separatorColor = .clear
+        separatorInset = .zero
+        separatorColor = UIColor.systemGray
         allowsSelection = false
         entriesProperty.setOnChange { _ in self.reloadData() }
     }
